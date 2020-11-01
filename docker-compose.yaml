@@ -8,5 +8,5 @@ services:
                   -  "8080:8080"
                 volumes:
                         - ./var/jenkins_home
-                command: sh -c "jenkins-job test ~/jobs/job1.yaml && jenkins-job update jobs"
+                command: sh -c "jenkins-job test /var/jenkins_home/jobs/job1.yaml && jenkins-job update /var/jenkins_home/jobs/"
 
