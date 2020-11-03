@@ -6,3 +6,5 @@ workflow-multibranch
 build-monitor-plugin
 groovy
 buildtriggerbadge
+role-strategy:2.7.0
+
