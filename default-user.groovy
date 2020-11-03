@@ -52,28 +52,41 @@ def strategy = new GlobalMatrixAuthorizationStrategy()
 //  Overall Permissions
 //strategy.add(hudson.model.Hudson.ADMINISTER,'charles')
 //strategy.add(hudson.PluginManager.CONFIGURE_UPDATECENTER,'user2')
-strategy.add(hudson.model.Hudson.READ,'user1','user2')
-//strategy.add(hudson.model.Hudson.READ,'user2')
+//strategy.add(hudson.model.Hudson.READ,'user1','user2')
+strategy.add(hudson.model.Hudson.READ,'user2')
+strategy.add(hudson.model.Hudson.READ,'user1')
+
 
 //strategy.add(hudson.model.Hudson.RUN_SCRIPTS,'charles')
 //strategy.add(hudson.PluginManager.UPLOAD_PLUGINS,'charles')
 
 //  Job Permissions
-//strategy.add(hudson.model.Item.BUILD,'charles')
-//strategy.add(hudson.model.Item.CANCEL,'charles')
-//strategy.add(hudson.model.Item.CONFIGURE,'charles')
-//strategy.add(hudson.model.Item.CREATE,'charles')
-//strategy.add(hudson.model.Item.DELETE,'charles')
-//strategy.add(hudson.model.Item.DISCOVER,'charles')
-//strategy.add(hudson.model.Item.READ,'charles')
-//strategy.add(hudson.model.Item.WORKSPACE,'charles')
+
+//user1 jobs permission
+strategy.add(hudson.model.Item.BUILD,'user1')
+strategy.add(hudson.model.Item.CANCEL,'user1')
+strategy.add(hudson.model.Item.CONFIGURE,'user1')
+strategy.add(hudson.model.Item.CREATE,'user1')
+strategy.add(hudson.model.Item.DELETE,'user1')
+strategy.add(hudson.model.Item.DISCOVER,'user1')
+strategy.add(hudson.model.Item.READ,'user1')
+strategy.add(hudson.model.Item.WORKSPACE,'user1')
+// User2 job permission
+strategy.add(hudson.model.Item.BUILD,'user2')
+strategy.add(hudson.model.Item.CANCEL,'user2')
+strategy.add(hudson.model.Item.CONFIGURE,'user2')
+strategy.add(hudson.model.Item.CREATE,'user2')
+strategy.add(hudson.model.Item.DELETE,'user2')
+strategy.add(hudson.model.Item.DISCOVER,'user2')
+strategy.add(hudson.model.Item.READ,'user2')
+strategy.add(hudson.model.Item.WORKSPACE,'user2')
 
 //  Run Permissions
 //strategy.add(hudson.model.Run.DELETE,'charles')
 //strategy.add(hudson.model.Run.UPDATE,'charles')
 
 //  View Permissions
-//strategy.add(hudson.model.View.CONFIGURE,'charles')
+//strategy.add(hudson.model.View.CONFIGURE,'user1','user2')
 //strategy.add(hudson.model.View.CREATE,'charles')
 //strategy.add(hudson.model.View.DELETE,'charles')
 //strategy.add(hudson.model.View.READ,'charles')
