@@ -57,8 +57,9 @@ ADD jenkins_jobs.ini /etc/jenkins_jobs/jenkins_jobs.ini
 ## Create directory for jenkins-job-builder
 RUN sudo mkdir -p  /etc/jenkins_jobs
 RUN sudo  chmod u+x /etc/jenkins_jobs
-ADD job1.yaml /var/jenkins_home/jobs/job1.yaml
-ADD job2.yaml /var/jenkins_home/jobs/job2.yaml
+#ADD job1.yaml /var/jenkins_home/jobs/job1.yaml
+#ADD job2.yaml /var/jenkins_home/jobs/job2.yaml
+ADD  ./jobdefinations/* /var/jenkins_home/jobs/
 #RUN  sh -c "sudo jenkins-jobs test /var/jenkins_home/jobs/job1.yaml"
 ## Expose jenkins http port
 EXPOSE 8080 

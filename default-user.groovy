@@ -51,8 +51,10 @@ def strategy = new GlobalMatrixAuthorizationStrategy()
 
 //  Overall Permissions
 //strategy.add(hudson.model.Hudson.ADMINISTER,'charles')
-strategy.add(hudson.PluginManager.CONFIGURE_UPDATECENTER,'user2')
-strategy.add(hudson.model.Hudson.READ,'user1')
+//strategy.add(hudson.PluginManager.CONFIGURE_UPDATECENTER,'user2')
+strategy.add(hudson.model.Hudson.READ,'user1','user2')
+//strategy.add(hudson.model.Hudson.READ,'user2')
+
 //strategy.add(hudson.model.Hudson.RUN_SCRIPTS,'charles')
 //strategy.add(hudson.PluginManager.UPLOAD_PLUGINS,'charles')
 
