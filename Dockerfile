@@ -40,7 +40,7 @@ RUN chmod 755 /usr/local/bin/jenkins-plugin-cli.sh
 ## Create directory for jenkins-job-builder
 RUN mkdir -p  /etc/jenkins_jobs
 RUN chmod 755 /etc/jenkins_jobs
-
+#
 
 ## Create jenkins-job-builder config directory
 ADD jenkins_jobs.ini /etc/jenkins_jobs/jenkins_jobs.ini
