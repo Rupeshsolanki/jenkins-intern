@@ -39,16 +39,8 @@ RUN chmod 755 /usr/local/bin/jenkins-plugin-cli.sh
 
 ## Create directory for jenkins-job-builder
 RUN mkdir -p  /etc/jenkins_jobs
-RUN chmod u+x /etc/jenkins_jobs
+RUN chmod 755 /etc/jenkins_jobs
 
-## Create jenkins-job-builder config directory
-#RUN echo " \
-#[jenkins] \n\
-#user=$admin \n\
-#password=admin123 \n\
-#url=http://127.0.0.1:8080 \n\
-#query_plugins_info=False \
-#"  > /etc/jenkins_jobs/jenkins_jobs.ini
 
 ## Create jenkins-job-builder config directory
 ADD jenkins_jobs.ini /etc/jenkins_jobs/jenkins_jobs.ini
@@ -57,18 +49,9 @@ ADD jenkins_jobs.ini /etc/jenkins_jobs/jenkins_jobs.ini
 ## Create directory for jenkins-job-builder
 RUN sudo mkdir -p  /etc/jenkins_jobs
 RUN sudo  chmod u+x /etc/jenkins_jobs
-#ADD job1.yaml /var/jenkins_home/jobs/job1.yaml
-#ADD job2.yaml /var/jenkins_home/jobs/job2.yaml
 ADD  ./jobdefinations/* /var/jenkins_home/jobs/
-#RUN  sh -c "sudo jenkins-jobs test /var/jenkins_home/jobs/job1.yaml"
 ## Expose jenkins http port
 EXPOSE 8080 
 
-## Update the job builder jenkins jobs
-#RUN sudo chown -R root:root /etc/jenkins_jobs 
 WORKDIR /var/jenkins_home
 
-#RUN sleep 30 && jenkins-jobs --conf /etc/jenkins_jobs/jenkins_jobs.ini --user=admin --password=admin123 update jobs
-#RUN sleep 30 && sudo jenkins-jobs --conf /etc/jenkins_jobs/jenkins_jobs.ini update jobs
-#RUN sudo chown -R jenkins:jenkins $JENKINS_HOME 
-#RUN ["/bin/bash", "-c", "sudo jenkins-jobs update jobs"]
